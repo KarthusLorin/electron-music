@@ -11,4 +11,16 @@ app.on('ready', () => {
     }
   })
   mainWindow.loadFile('./renderer/index.html')
+  ipcMain.on('add-music-window', () => {
+    const addWindow = new BrowserWindow({
+      width: 500,
+      height: 400,
+      webPreferences: {
+        // 允许使用 node
+        nodeIntegration: true
+      },
+      parent: mainWindow
+    })
+    addWindow.loadFile('./renderer/add.html')
+  })
 })
