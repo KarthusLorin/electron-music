@@ -10,8 +10,5 @@ app.on('ready', () => {
       nodeIntegration: true
     }
   })
-  mainWindow.loadFile('index.html')
-  ipcMain.on('message', (event, arg) => {
-    event.sender.send('reply', 'hello from main')
-  })
+  mainWindow.loadFile('./renderer/index.html')
 })
