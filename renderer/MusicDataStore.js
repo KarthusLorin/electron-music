@@ -10,6 +10,7 @@ class DataStore extends Store {
 
   saveTracks () {
     this.set('tracks', this.tracks)
+    return this
   }
 
   getTracks () {
